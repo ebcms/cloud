@@ -1,6 +1,6 @@
 <?php
 
-use App\Ebcms\Admin\Model\Account;
+use App\Psrphp\Admin\Model\Account;
 use App\Ebcms\Cloud\Http\Index;
 use PsrPHP\Framework\Framework;
 use PsrPHP\Router\Router;

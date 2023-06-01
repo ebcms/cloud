@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Ebcms\Cloud\Http;
 
-use App\Ebcms\Admin\Http\Common;
-use App\Ebcms\Admin\Traits\DirTrait;
+use App\Psrphp\Admin\Http\Common;
+use App\Psrphp\Admin\Traits\DirTrait;
 use Composer\Autoload\ClassLoader;
 use Exception;
 use PsrPHP\Session\Session;

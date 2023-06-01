@@ -1,4 +1,4 @@
-{include common/header@ebcms/admin}
+{include common/header@psrphp/admin}
 <script>
     var EBCMS = {};
     $(function() {
@@ -230,4 +230,4 @@
         });
     });
 </script>
-{include common/footer@ebcms/admin}
+{include common/footer@psrphp/admin}

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Ebcms\Cloud\Http;
 
-use App\Ebcms\Admin\Http\Common;
+use App\Psrphp\Admin\Http\Common;
 use App\Ebcms\Cloud\Model\Server;
 use Throwable;
 
