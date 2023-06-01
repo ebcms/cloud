@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Ebcms\Cloud\Http;
 
 use App\Psrphp\Admin\Http\Common;
+use App\Psrphp\Admin\Lib\Response;
 use Composer\Autoload\ClassLoader;
 use PsrPHP\Session\Session;
 use Exception;
@@ -21,9 +22,9 @@ class Cover extends Common
             $clouditem = $session->get('clouditem');
             $root = dirname(dirname(dirname((new ReflectionClass(ClassLoader::class))->getFileName())));
             $this->unZip($clouditem['tmpfile'], $root);
-            return $this->success('文件更新成功!');
+            return Response::success('文件更新成功!');
         } catch (Throwable $th) {
-            return $this->error($th->getMessage());
+            return Response::error($th->getMessage());
         }
     }
 

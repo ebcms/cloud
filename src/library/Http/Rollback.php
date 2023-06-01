@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Ebcms\Cloud\Http;
 
 use App\Psrphp\Admin\Http\Common;
-use App\Psrphp\Admin\Traits\DirTrait;
+use App\Psrphp\Admin\Lib\Response;
 use Composer\Autoload\ClassLoader;
 use Exception;
 use PsrPHP\Session\Session;
@@ -15,7 +15,6 @@ use ZipArchive;
 
 class Rollback extends Common
 {
-    use DirTrait;
 
     public function get(
         Session $session
@@ -25,7 +24,7 @@ class Rollback extends Common
             $root = dirname(dirname(dirname((new ReflectionClass(ClassLoader::class))->getFileName())));
             $this->unZip($clouditem['backup_file'], $root);
         } catch (Throwable $th) {
-            return $this->error('还原失败：' . $th->getMessage());
+            return Response::error('还原失败：' . $th->getMessage());
         }
     }
 

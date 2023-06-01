@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Ebcms\Cloud\Http;
 
 use App\Psrphp\Admin\Http\Common;
+use App\Psrphp\Admin\Lib\Response;
 use App\Psrphp\Admin\Lib\Zip;
 use Composer\Autoload\ClassLoader;
 use PsrPHP\Session\Session;
@@ -31,9 +32,9 @@ class Backup extends Common
             $zip->close();
 
             $session->set('clouditem', $clouditem);
-            return $this->success('备份成功！', $clouditem);
+            return Response::success('备份成功！', $clouditem);
         } catch (Throwable $th) {
-            return $this->error($th->getMessage());
+            return Response::error($th->getMessage());
         }
     }
 }

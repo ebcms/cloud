@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Ebcms\Cloud\Http;
 
 use App\Psrphp\Admin\Http\Common;
+use App\Psrphp\Admin\Lib\Response;
 use Composer\Autoload\ClassLoader;
 use PsrPHP\Session\Session;
 use ReflectionClass;
@@ -35,9 +36,9 @@ class Install extends Common
 
             $session->delete('clouditem');
 
-            return $this->success('升级成功!');
+            return Response::success('升级成功!');
         } catch (Throwable $th) {
-            return $this->error($th->getMessage());
+            return Response::error($th->getMessage());
         }
     }
 }
