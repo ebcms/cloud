@@ -2,6 +2,7 @@
     "name": "ebcms/cloud",
     "description": "系统更新服务",
     "license": "GPL-3.0",
+    "type": "psrapp",
     "require": {
         "psrphp/admin": "^1.0"
     },
