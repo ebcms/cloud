@@ -14,12 +14,11 @@ class Download extends Common
 {
 
     public function get(
-        Session $session,
-        Curl $curl
+        Session $session
     ) {
         try {
             $clouditem = $session->get('clouditem');
-            if (false === $content = $curl->get($clouditem['source'])) {
+            if (false === $content = Curl::get($clouditem['source'])) {
                 return Response::error('升级包下载失败，请稍后再试~');
             }
 
