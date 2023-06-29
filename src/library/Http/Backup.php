@@ -26,7 +26,9 @@ class Backup extends Common
             $clouditem['backup_file'] = $root . '/backup/system_' . date('YmdHis') . '.zip';
 
             $zip->open($clouditem['backup_file'], ZipArchive::CREATE);
-            $zip->addDirectory($root . '/vendor', $root . '/');
+            if (is_dir($root . '/vendor')) {
+                $zip->addDirectory($root . '/vendor', $root . '/');
+            }
             $zip->addFile($root . '/composer.json', 'composer.json');
             $zip->addFile($root . '/composer.lock', 'composer.lock');
             $zip->close();
